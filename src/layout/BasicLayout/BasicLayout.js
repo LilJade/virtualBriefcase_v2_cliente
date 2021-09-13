@@ -7,10 +7,11 @@ export default function basicLayout(props) {
     const {children} = props
 
     return (
-        <div>
+        <>
             <Header></Header>
-            <h1>Basic Layout</h1>
-            {children}
-        </div>
+            <div className="basicLayout">
+                {children}
+            </div>
+        </>
     )
 }
