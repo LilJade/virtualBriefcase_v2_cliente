@@ -1,0 +1,69 @@
+@import "../../scss/index.scss";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  background-color: $darkness;
+  color: #fff;
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    padding: 3px;
+
+    .generalOptions {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+      }
+    }
+
+    .userOptions {
+      display: none;
+      align-items: center;
+    }
+
+    .loginOptions {
+      display: flex;
+      align-items: center;
+
+      .button {
+        background-color: #185adb;
+        border-radius: 2px;
+        padding: 2px;
+        width: 50px;
+        font-weight: bold;
+      }
+
+      .button:hover {
+        background-color: $secundary;
+        color: $darkness;
+        transition: 0.3s;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 6px;
+      margin-left: 8px;
+    }
+
+    a:hover {
+      cursor: pointer;
+      color: $secundary;
+    }
+  }
+}
