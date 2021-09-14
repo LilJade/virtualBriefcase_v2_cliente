@@ -16,7 +16,7 @@ export default function Header() {
                     <Link to="/sobrenosotros">Sobre Nosotros</Link>
                 </div>
                 <div className="loginOptions">
-                    <Link to="/iniciarsesion">Iniciar Sesión</Link>
+                    <Link to="/login">Iniciar Sesión</Link>
                     <Link to="/registrarse" className="button">Registrarse</Link>
                </div>
                 <div className="userOptions">

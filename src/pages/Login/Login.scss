@@ -1,0 +1,22 @@
+@import "../../scss/index.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+  .rotules {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+.inf {
+  img {
+    width: 100px;
+  }
+}

@@ -1,4 +1,5 @@
 @import "../../scss/index.scss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 
 .header {
   display: flex;
@@ -12,21 +13,22 @@
   top: 0;
   background-color: $darkness;
   color: #fff;
+  font-family: "Nunito", sans-serif;
 
   .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
-    padding: 3px;
+    width: 60%;
+    padding: 10px;
 
     .generalOptions {
       display: flex;
       align-items: center;
 
       img {
-        width: 40px;
+        width: 140px;
       }
     }
 
@@ -40,10 +42,10 @@
       align-items: center;
 
       .button {
-        background-color: #185adb;
+        background-color: $button;
         border-radius: 2px;
-        padding: 2px;
-        width: 50px;
+        padding: 4px;
+        width: 150px;
         font-weight: bold;
       }
 
@@ -57,8 +59,8 @@
     a {
       text-decoration: none;
       color: #fff;
-      font-size: 6px;
-      margin-left: 8px;
+      font-size: 18px;
+      margin-left: 18px;
     }
 
     a:hover {

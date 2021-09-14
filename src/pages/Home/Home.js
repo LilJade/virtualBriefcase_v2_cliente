@@ -9,7 +9,7 @@ export default function Home() {
         <BasicLayout>
             <div className="box">
                 <div className="inf">
-                    <h1>VIRTUAL<br/>BRIEFCASE</h1>
+                    <h1>VIRTUAL<br/><span>BRIEFCASE</span></h1>
                     <h3>COMPARTE - APRENDE - INSPÍRATE</h3>
                     <p>
                     Virtual Briefcase es un espacio para que tú<br/>puedas dar a conocer tus proyectos.
