@@ -15,8 +15,8 @@ export default function Home() {
                     Virtual Briefcase es un espacio para que tú<br/>puedas dar a conocer tus proyectos.
                     </p>
                     <div className="optionsBox">
-                        <Link to="" className="buttonClassic2">Registrate gratis</Link>
-                        <Link to="" className="buttonClassic">Ver proyectos</Link>
+                        <Link to="" className="buttonClassic2">Registrate<br/>gratis</Link>
+                        <Link to="" className="buttonClassic">Ver<br/>proyectos</Link>
                     </div>
                 </div>
                 <img src={coverPage}></img>

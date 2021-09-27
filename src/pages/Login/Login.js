@@ -1,35 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Login.scss"
-import { Link } from 'react-router-dom'
 import BasicLayout from '../../layout/BasicLayout/BasicLayout'
 import loginImage from '../../assets/authentication.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faLocationArrow, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
-import { FormGroup } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
+import BasicModal from "../../components/Modals/BasicModal/BasicModal";
+import SingInForm from "../../components/SingInForm/SingInForm";
+import SingUpForm from "../../components/SingUpForm/SingUpForm";
 
-export default function Login() {
-    return (
-        <BasicLayout>
-            <div className="container">
-                <div className="rotules">
-                    <h2>VIRTUAL<br/><span>BRIEFCASE</span></h2>
-                    <Link to="/">Volver al Inicio</Link>
-                </div>
-                <div className="loginBox">
-                    <div className="inf">
-                        <img src={loginImage}></img>
-                        <div>
-                            <span><FontAwesomeIcon icon={faBriefcase}/>La mejor forma de crear un portafolio</span>
-                            <span><FontAwesomeIcon icon={faTachometerAlt}/>Rápido y sencillo</span>
-                            <span><FontAwesomeIcon icon={faLocationArrow}/> Desde cualquier lugar</span>
-                        </div>
-                    </div>
-                    <form>
-                        <h4>¡BIENVENIDO!</h4>
-                        <div></div>
-                    </form>
-                </div>
+function LeftComponent() {
+    return(
+        <Col className="login__left" xs={6}>
+            <img src={loginImage} alt="Login"></img>
+            <div>
+                <span><FontAwesomeIcon icon={faBriefcase}/>La mejor forma de crear un portafolio</span>
+                <span><FontAwesomeIcon icon={faTachometerAlt}/>Rápido y sencillo</span>
+                <span><FontAwesomeIcon icon={faLocationArrow}/> Desde cualquier lugar</span>
             </div>
-        </BasicLayout>
+        </Col>
+    )
+}
+
+function RightComponent(props) {
+
+    const {openModal, setShowModal,setRefreshCheckLogin} = props;
+
+    return(
+        <Col className="login__right" xs={6}>
+            <div>
+                <h3>¡BIENVENIDO!</h3>
+                <SingInForm setRefreshCheckLogin={setRefreshCheckLogin}/>
+                <h4>¿Aún no estás registrado?</h4>
+                <a onClick={ () => openModal(<SingUpForm setShowModal={setShowModal}/>) }>¡Regístrate ahora!</a>
+            </div>
+        </Col>
+    )
+}
+
+export default function Login(props) {
+
+    const {setRefreshCheckLogin} = props;
+    const [showModal, setShowModal] = useState(false);
+    const [contentModal, setContentModal] = useState(null);
+
+    const openModal = content => {
+        setShowModal(true);
+        setContentModal(content);
+    }
+
+    return (
+        <>
+            <BasicLayout>
+                <Container className="login" fluid>
+                    <div className="tittle">
+                        <h2>Virtual<br />BRIEFCASE</h2>
+                    </div>
+                    <Row>
+                        <LeftComponent />
+                        <RightComponent openModal={openModal} setShowModal={setShowModal} setRefreshCheckLogin={setRefreshCheckLogin}/>
+                    </Row>
+                </Container>
+                <BasicModal show={showModal} setShow={setShowModal}>
+                    {contentModal}
+                </BasicModal>
+            </BasicLayout>
+        </>
     )
 }
