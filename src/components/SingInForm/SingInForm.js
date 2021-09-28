@@ -1,7 +1,6 @@
-import Button from '@restart/ui/esm/Button'
 import { size, values } from 'lodash';
 import React, { useState } from 'react'
-import { Form, FormControl, FormGroup, Spinner } from 'react-bootstrap'
+import { Form, FormControl, FormGroup, Spinner, Button } from 'react-bootstrap'
 import Swal from 'sweetalert2';
 import {isEmailValid} from "../../utils/validation";
 import {signInApi, setTokenApi} from "../../api/auth";
@@ -62,11 +61,11 @@ export default function SingInForm(props) {
         <div className="signInForm">
             <Form onSubmit={onSubmit} onChange={onChange}>
                 <FormGroup>
-                    <span>Correo electrónico: </span>
+                    <h5>Correo electrónico: </h5>
                     <FormControl defaultValue={formData.email} name="email" type="email" placeholder="example001@some.com"/>
                 </FormGroup>
                 <FormGroup>
-                    <span>Contraseña: </span>
+                    <h5>Contraseña: </h5>
                     <FormControl defaultValue={formData.password} name="password" type="password" placeholder="************"/>
                 </FormGroup>
                 <Button variant="danger" type="submit">

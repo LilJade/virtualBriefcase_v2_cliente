@@ -9,7 +9,6 @@ export default function BasicModal(props) {
     return (
 
         <Modal className="basic-modal" show={show} onHide={ () => setShow(false) } centered size="lg">
-            <Modal.Header></Modal.Header>
             <Modal.Body>
                 {children}
             </Modal.Body>

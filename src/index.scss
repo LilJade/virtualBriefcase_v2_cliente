@@ -16,14 +16,14 @@ code {
 
 input.form-control,
 textarea.form-control {
-  background-color: $secundary-blue;
   border-radius: 0;
   border: 0;
   border-bottom: 3px solid $darkness;
+  font-size: 26px;
+  margin-bottom: 20px;
 
   &:focus {
-    background-color: $secundary-blue;
     box-shadow: none;
-    border-bottom: 3px solid $primary;
+    border-bottom: 3px solid $secundary-blue;
   }
 }

@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import "./SingUpForm.scss";
 import {isEmailValid} from "../../utils/validation";
 import {signUpApi} from "../../api/auth";
-import { Col, Form, FormControl, FormGroup, Row, Spinner } from 'react-bootstrap';
-import Button from '@restart/ui/esm/Button';
+import { Col, Form, FormControl, FormGroup, Row, Spinner, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 function initialFormValue() {
@@ -67,7 +66,7 @@ export default function SingUpForm(props) {
     };
 
     return (
-        <div className="singUpForm">
+        <div className="signUpForm">
             <h3>Crea tu cuenta!</h3>
 
             <Form>
@@ -82,7 +81,7 @@ export default function SingUpForm(props) {
                     </Row>
                 </FormGroup>
                 <FormGroup>
-                    <FormControl defaultValue={formData.email} name="email" type="email" placeholder="example001@some.com"/>
+                    <FormControl defaultValue={formData.email} name="email" type="email" placeholder="Correo electrónico"/>
                 </FormGroup>
                 <FormGroup>
                     <Row>
