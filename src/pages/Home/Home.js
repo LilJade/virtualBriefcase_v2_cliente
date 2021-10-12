@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./Home.scss"
 import BasicLayout from '../../layout/BasicLayout'
-import coverPage from "../../assets/coverPage.png"
+import coverPage from "../../assets/png/coverPage.png"
 import { Link } from 'react-router-dom'
 import BasicModal from '../../components/Modals/BasicModal/BasicModal';
 import SingUpForm from "../../components/SingUpForm/SingUpForm";
