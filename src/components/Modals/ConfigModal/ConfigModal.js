@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import "./ConfigModal.scss";
+import {Modal} from "react-bootstrap";
+import {Close} from "../../../utils/Icons";
 
-export default function ConfigModal() {
+export default function ConfigModal(props) {
+    const{ show, setShow, title,children} = props
+   
     return (
-        <div>
-            
-        </div>
+      <Modal className="config-modal" show={show} onHide={() => setShow(false)} centered size="lg">
+          <Modal.Header>
+              <Modal.Title>
+                <Close onClick={() => setShow(false)}/>
+                <h2>{title}</h2>
+              </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+              {children}
+          </Modal.Body>
+      </Modal>
     )
 }

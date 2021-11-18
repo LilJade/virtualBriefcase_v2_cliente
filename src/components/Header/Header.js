@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./header.scss";
 import {Link} from "react-router-dom";
-import logoVB from "../../assets/LogoVB.png";
+import logoVB from "../../assets/png/LogoVB.png";
 import SingUpForm from '../SingUpForm/SingUpForm';
 import BasicModal from '../Modals/BasicModal/BasicModal';
 
@@ -23,7 +23,7 @@ export default function Header() {
                     <img className="logoVB" src={logoVB} alt="VirtualBriefcaseLogo"></img>
                     <Link to="/">Inicio</Link>
                     <Link to="/proyectos">Proyectos</Link>
-                    <Link to="/user">Usuarios</Link>
+                    <Link to="/users">Usuarios</Link>
                     <Link to="/sobrenosotros">Sobre Nosotros</Link>
                 </div>
                 <div className="loginOptions">
