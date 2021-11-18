@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Error404.scss"
 import BasicLayout from '../../layout/BasicLayout/BasicLayout'
-import ImgError404 from "../../assets/png/error404.png"
+import ImgError404 from "../../assets/error404.png"
 import { Link } from 'react-router-dom'
 
 export default function Error404() {

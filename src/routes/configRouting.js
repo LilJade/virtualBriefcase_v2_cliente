@@ -1,8 +1,7 @@
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Error404 from "../pages/Error404";
-import Users from "../pages/Users";
-import User from "../pages/User";
+import Home from "../pages/Home"
+import Login from "../pages/Login"
+import Error404 from "../pages/Error404"
+import User from "../pages/User"
 
 export default [
     {
@@ -16,14 +15,9 @@ export default [
         page: Login
     },
     {
-        path:"/iduser",
+        path: "/user",
         exact: true,
         page: User
-    },
-    {
-        path: "/users",
-        exact: true,
-        page: Users
     },
     {
         path: "*",

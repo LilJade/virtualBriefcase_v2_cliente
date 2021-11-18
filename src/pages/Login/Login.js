@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import "./Login.scss"
 import BasicLayout from '../../layout/BasicLayout/BasicLayout'
-import loginImage from '../../assets/png/authentication.png'
+import loginImage from '../../assets/authentication.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faLocationArrow, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
+import { Col, Container, Row } from 'react-bootstrap'
 import BasicModal from "../../components/Modals/BasicModal/BasicModal";
 import SingInForm from "../../components/SingInForm/SingInForm";
 import SingUpForm from "../../components/SingUpForm/SingUpForm";
