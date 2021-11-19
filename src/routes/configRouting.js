@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Error404 from "../pages/Error404";
@@ -16,7 +17,7 @@ export default [
         page: Login
     },
     {
-        path:"/iduser",
+        path:"/:id",
         exact: true,
         page: User
     },

@@ -3,12 +3,11 @@ import "./BasicLayout.scss"
 import Header from '../../components/Header'
 
 export default function basicLayout(props) {
-    console.log(props)
-    const {children} = props
+    const {children, setRefreshCheckLogin} = props
 
     return (
         <>
-            <Header></Header>
+            <Header setRefreshCheckLogin= {setRefreshCheckLogin}></Header>
             <div className="basicLayout">
                 {children}
             </div>

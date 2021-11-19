@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./User.scss"
 import BasicLayout from '../../layout/BasicLayout';
 import PanelInfo from '../../components/User/PanelInfo/PanelInfo';
 import TabNav from '../../components/Tabs/TabNav';
 import Tab from '../../components/Tabs/Tab';
+import { getUserApi } from '../../api/user';
+import Swal from 'sweetalert2';
+import {withRouter} from "react-router-dom"
 
-export default function User() {
+export  function User(props) {
+    const {match} = props
+const [user, setUser] = useState(null);
+const {params}= match
+
+useEffect(() => {
+    getUserApi(params.id).then(response =>{
+       if(!response){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El usuario que has visitado no existe'
+          })
+       }
+       setUser(response);
+    }).catch(() =>{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El usuario que has visitado no existe'
+          })
+    })
+}, [params])
+
+
 
 {/*    constructor(props) {
         super(props)
@@ -50,3 +77,5 @@ export default function User() {
         </BasicLayout>
     )
 }
+
+export default withRouter(User);

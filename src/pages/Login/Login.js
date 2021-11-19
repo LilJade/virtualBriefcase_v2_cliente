@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
 import "./Login.scss"
 import BasicLayout from '../../layout/BasicLayout/BasicLayout'
@@ -51,7 +52,7 @@ export default function Login(props) {
 
     return (
         <>
-            <BasicLayout>
+         
                 <div className="login">
                     <div className="tittle">
                         <h2>Virtual<br /><span>BRIEFCASE</span></h2>
@@ -65,7 +66,6 @@ export default function Login(props) {
                 <BasicModal show={showModal} setShow={setShowModal}>
                     {contentModal}
                 </BasicModal>
-            </BasicLayout>
         </>
     )
 }

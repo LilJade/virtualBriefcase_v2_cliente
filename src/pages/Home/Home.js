@@ -7,7 +7,8 @@ import BasicModal from '../../components/Modals/BasicModal/BasicModal';
 import SingUpForm from "../../components/SingUpForm/SingUpForm";
 
 export default function Home(props) {
-
+    
+    const {setRefreshCheckLogin} = props;
     const [showModal, setShowModal] = useState(false);
     const [contentModal, setContentModal] = useState(null);
 
@@ -17,7 +18,7 @@ export default function Home(props) {
     }
 
     return (
-        <BasicLayout>
+        <BasicLayout setRefreshCheckLogin={setRefreshCheckLogin}>
             <div className="box">
                 <div className="inf">
                     <h1>VIRTUAL<br/><span>BRIEFCASE</span></h1>

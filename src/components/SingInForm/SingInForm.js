@@ -14,7 +14,7 @@ function initialFormValue() {
 }
 
 export default function SingInForm(props) {
-
+    console.log(props)
     const {setRefreshCheckLogin} = props;
     const [formData, setFormData] = useState(initialFormValue);
     const [signInLoading, setSingInLoading] = useState(false);
@@ -46,6 +46,7 @@ export default function SingInForm(props) {
                     } else {
                         setTokenApi(response.token);
                         setRefreshCheckLogin(true);
+                        window.location="/";
                     }
                 }).catch(() => {
                     Swal.fire({ icon: 'error', title: 'Opps!..', text: 'Error del servidor, inténtalo más tarde.' })
