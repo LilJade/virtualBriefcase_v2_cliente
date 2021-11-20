@@ -14,7 +14,6 @@ function initialFormValue() {
 }
 
 export default function SingInForm(props) {
-    console.log(props)
     const {setRefreshCheckLogin} = props;
     const [formData, setFormData] = useState(initialFormValue);
     const [signInLoading, setSingInLoading] = useState(false);

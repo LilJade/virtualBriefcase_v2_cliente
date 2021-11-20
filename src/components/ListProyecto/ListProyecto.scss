@@ -1,0 +1,94 @@
+@import "../../scss/index.scss";
+
+.proyects {
+  .proyect-header {
+    background-color: $secundary;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      color: $border-light;
+      font: bold 2.5rem;
+      width: 300px;
+      margin-left: 400px;
+      margin-top: 10px;
+    }
+  }
+  .proyects-list {
+    background-color: $background-light;
+    padding: 5px 20px;
+  }
+  .proyectAgegar {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    .Agregar-card {
+      padding: 5px 20px;
+      width: 270px;
+      height: 350px;
+      border: 4px dashed rgba(152, 113, 214, 0.521);
+      border-radius: 15px;
+      margin: 10px;
+      text-decoration: none;
+      .foto {
+        align-content: center;
+        background-color: transparent;
+        margin: auto;
+        width: 3rem;
+        height: 3rem;
+        background-color: $background-light;
+      }
+      h2 {
+        font-size: bold 1.5rem;
+      }
+      h3 {
+        font-size: 16px;
+      }
+      &:hover {
+        color: $font-dark;
+        border: 4px dashed #b4b4ec77;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.proyectitems {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  .proyectl {
+    padding: 2px 20px;
+    background-color: rgba(152, 113, 214, 0.521);
+    color: $font-dark;
+    width: 300px;
+    height: 350px;
+    border-radius: 15px;
+    margin: 1px;
+    justify-content: center;
+    text-decoration: none;
+    .portadas {
+      background-color: $primary-grey;
+      width: 16rem;
+      height: 8rem;
+      border-radius: 10px;
+    }
+    h2 {
+      font-size: bold 1.5rem;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+    h4 {
+      color: $font-grey;
+      font-size: 12px;
+    }
+    &:hover {
+      color: $font-dark;
+      background-color: #b4b4ec77;
+      text-decoration: none;
+    }
+  }
+}

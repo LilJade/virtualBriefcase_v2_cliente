@@ -1,78 +1,91 @@
-import { API_HOST } from '../utils/constant';
-import { getTokenApi } from './auth';
+import {API_HOST} from "../utils/constant";
+import {getTokenApi} from "./auth";
 
-export function checkFollowApi(idUser) {
+export function checkFollowApi(idUser){
     const url = `${API_HOST}/consultaRelacion?id=${idUser}`;
 
     const params = {
         headers:{
             Authorization: `Bearer ${getTokenApi()}`
         }
-    };
+    }
 
-    return fetch(url, params).then(response => {
+    return fetch(url,params)
+    .then(response =>{
         return response.json();
-    }).then(result => {
+    })
+    .then(result =>{
         return result;
-    }).catch(err => {
-        return err;
+    })
+    .catch(err =>{
+        return err
     });
+
 }
 
-export function followUserApi(idUser) {
+export function followUserApi(idUser){
     const url = `${API_HOST}/seguidor?id=${idUser}`;
 
     const params = {
         method: "POST",
-        headers: {
+        headers:{
             Authorization: `Bearer ${getTokenApi()}`
         }
-    };
+    }
 
-    return fetch(url, params).then(response => {
+    return fetch(url,params)
+    .then(response =>{
         return response.json();
-    }).then(result => {
+    })
+    .then(result =>{
         return result;
-    }).catch(err => {
-        return err;
+    })
+    .catch(err =>{
+        return err
     });
+
 }
 
-export function unfollowUserApi(idUser) {
-    const url = `${API_HOST}/bajarRelacion?id=${idUser}`;
+export function unfollowUserApi(idUser){
+    const url = `${API_HOST}/bajaRelacion?id=${idUser}`;
 
     const params = {
         method: "DELETE",
-        headers: {
+        headers:{
             Authorization: `Bearer ${getTokenApi()}`
         }
-    };
+    }
 
-    return fetch(url, params).then(response => {
+    return fetch(url,params)
+    .then(response =>{
         return response.json();
-    }).then(result => {
+    })
+    .then(result =>{
         return result;
-    }).catch(err => {
-        return err;
+    })
+    .catch(err =>{
+        return err
     });
+
 }
 
-export function getFllowUserApi(paramsUrl) {
-    const url = `${API_HOST}/mostrarDatos?${paramsUrl}`;
+export function getFollowsApi(paramsUrl){
+    const url= `${API_HOST}/mostrarDatos?${paramsUrl}`;
 
     const params = {
-        headers: {
-            Authorization: `Bearer ${getTokenApi()}`
-        }
+         headers: {
+             Authorization:  `Bearer ${getTokenApi()}`
+         }
     };
 
-    return fetch(url, params).then(response => {
+    return fetch(url, params)
+    .then(response => {
         return response.json()
-    }).then((result) => {
+    })
+    .then((result) =>{
         return result;
-    }).catch((err) => {
+    })
+    .catch((err) => {
         return err;
     })
 }
-
-

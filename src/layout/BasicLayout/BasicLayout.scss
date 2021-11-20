@@ -2,10 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700;900&family=Rubik:wght@300;400;600;700;800&display=swap");
 
 .basicLayout {
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: $primary;
   width: 100%;
   font-family: "Nunito", sans-serif;
+  height: 95vh;
+  width: 220vh;
+  overflow-y: scroll;
+  padding: 0 !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

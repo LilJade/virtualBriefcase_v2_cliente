@@ -19,7 +19,7 @@ export default function Home(props) {
 
     return (
         <BasicLayout setRefreshCheckLogin={setRefreshCheckLogin}>
-            <div className="box">
+            <div   className="box">
                 <div className="inf">
                     <h1>VIRTUAL<br/><span>BRIEFCASE</span></h1>
                     <h3>COMPARTE - APRENDE - INSPÍRATE</h3>

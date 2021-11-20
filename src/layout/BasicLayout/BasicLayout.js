@@ -9,7 +9,9 @@ export default function basicLayout(props) {
         <>
             <Header setRefreshCheckLogin= {setRefreshCheckLogin}></Header>
             <div className="basicLayout">
+                <div className="basicLayout__content">
                 {children}
+            </div>
             </div>
         </>
     )

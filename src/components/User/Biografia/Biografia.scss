@@ -1,0 +1,14 @@
+@import "../../../scss/index.scss";
+
+.bio-container {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+}

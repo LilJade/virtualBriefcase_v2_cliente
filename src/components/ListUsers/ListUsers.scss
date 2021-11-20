@@ -1,0 +1,26 @@
+@import "../../scss/index.scss";
+
+.listuser {
+  background-color: $background-light;
+  padding: 5px 20px;
+  .list-users {
+    padding: 0;
+
+    &__user {
+      padding: 15px 30px;
+      color: $font-dark;
+      border-bottom: 1px solid $border-grey;
+      text-decoration: none;
+
+      &:hover {
+        color: $font-dark;
+        background-color: rgba(124, 123, 123, 0.2);
+        text-decoration: none;
+      }
+      h5 {
+        font-weight: normal;
+        color: $font-grey;
+      }
+    }
+  }
+}

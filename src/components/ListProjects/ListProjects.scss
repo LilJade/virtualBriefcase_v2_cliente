@@ -1,0 +1,33 @@
+@import "../../scss/index.scss";
+
+.project {
+  display: flex;
+  border-bottom: 1px solid $border-grey;
+  color: $font-dark;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+    background-color: rgba(226, 190, 31, 0.2);
+  }
+  .avatarspro {
+    background-color: black;
+    width: 5rem;
+    height: 5rem;
+  }
+  .name {
+    font-weight: bold;
+    align-content: flex-start;
+    font-size: 1.5rem;
+  }
+  .titulop {
+    font-size: 1rem;
+  }
+  .infop {
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: $font-grey;
+  }
+}

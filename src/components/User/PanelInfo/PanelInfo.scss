@@ -3,23 +3,9 @@
 .panelInfoUser {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 100%;
-  min-height: 50vh;
-  padding: 5px;
-
-  .avatar {
-    width: 50%;
-    border-radius: 250px;
-    border: 4px solid #000;
-
-    img {
-      width: 100%;
-      border-radius: 250px;
-    }
-  }
+  margin-top: -50px;
 
   .infoUser {
     display: flex;
@@ -55,6 +41,17 @@
         height: 25px;
         fill: gray;
         margin-right: 20px;
+      }
+    }
+  }
+  .options {
+    button {
+      background-color: $primary;
+      width: 150px;
+
+      &:hover {
+        background-color: $primary;
+        opacity: 0.6;
       }
     }
   }

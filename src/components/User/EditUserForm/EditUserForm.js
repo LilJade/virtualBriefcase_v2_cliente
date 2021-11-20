@@ -8,7 +8,7 @@ import{API_HOST} from "../../../utils/constant"
 import {Camara} from "../../../utils/Icons"
 import {uploadAvatarApi, updateInfoApi} from "../../../api/user"
 import Swal from 'sweetalert2';
-
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function EditUserForm(props) {
     const {user, setShowModal} =props

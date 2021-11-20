@@ -43,20 +43,21 @@ export function uploadAvatarApi(file) {
     })
 }
 
-export function updateInfoApi(data) {
+export function updateInfoApi(data){
     const url = `${API_HOST}/actualizar`;
-
     const params = {
-        method: "POST",
-        headers: {
+        method: "PUT",
+        headers:{
             Authorization: `Bearer ${getTokenApi()}`
         },
         body: JSON.stringify(data)
-    }
+    };
 
-    return fetch(url, params).then(response => {
+    return fetch(url, params)
+    .then(response => {
         return response;
-    }).catch(err => {
+    })
+    .catch(err => {
         return err;
     })
 }
