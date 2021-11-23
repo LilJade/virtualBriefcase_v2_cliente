@@ -33,7 +33,7 @@ export default function Header(props) {
                     <Link to="/">Inicio</Link>
                     <Link to="/proyectos">Proyectos</Link>
                     <Link to="/users">Usuarios</Link>
-                    <Link to="/sobrenosotros">Sobre Nosotros</Link>
+                    <Link to="/aboutus">Sobre Nosotros</Link>
                 </div>
                 {user ?(
                      <div className="userOptions">

@@ -6,12 +6,18 @@ import Users from "../pages/Users";
 import User from "../pages/User";
 import Proyecto from "../pages/Proyecto"
 import Proyectos from "../pages/Proyectos"
+import AboutUs from "../pages/AboutUs";
 
 export default [
     {
         path: "/",
         exact: true,
         page: Home
+    },
+    {
+        path:"/aboutus",
+        exact: true,
+        page: AboutUs
     },
     {
         path: "/login",
@@ -37,7 +43,6 @@ export default [
         exact: true,
         page: User
     },
-    
     {
         path: "*",
         page: Error404
