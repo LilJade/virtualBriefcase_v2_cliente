@@ -1,34 +1,31 @@
+/* eslint-disable no-const-assign */
+import React, { useState, useRef } from 'react'
 import { size, values } from 'lodash';
-import React, { useState } from 'react'
 import "./SingUpForm.scss";
 import {isEmailValid} from "../../utils/validation";
 import {signUpApi} from "../../api/auth";
 import { Col, Form, FormControl, FormGroup, Row, Spinner, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
-
-function initialFormValue() {
-    return {
-        nombres: "",
-        apellidos: "",
-        email: "",
-        password: "",
-        repetir: ""
-    };
-}
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function SingUpForm(props) {
-
+    const captcha = useRef(null);
     const {setShowModal} = props;
     const [formData, setFormData] = useState(initialFormValue());
     const [singUpLoading, setSingUpLoading] = useState(false);
 
     const onChange = e => {
-        setFormData = {...formData, [e.target.name]: e.target.value}
+      setFormData ({...formData, [e.target.name]: e.target.value});
     };
+
+    const recaptchaOnchange = () => {
+       if(captcha.current.getValue()){
+           console.log("el usuario no es un robot")
+       };
+    }
 
     const onSubmit = e => {
         e.preventDefault();
-
         let validCount = 0;
 
         values(formData).some(value => {
@@ -46,7 +43,10 @@ export default function SingUpForm(props) {
                 Swal.fire({ icon: 'error', title: 'Opps!..', text: 'Las contraseñas tienen que ser iguales!' })
             } else if (size(formData.password) < 6) {
                 Swal.fire({ icon: 'error', title: 'Opps!..', text: 'La contraseña tiene que tener al menos 6 caracteres' })
-            } else {
+            }else if(!captcha.current.getValue()){
+                Swal.fire({ icon: 'error', title: 'Opps!..', text: 'Debes verificar que no eres un robot' })
+            }
+            else {
                 setSingUpLoading(true);
                 signUpApi(formData).then(response => {
                     if(response.code) {
@@ -69,11 +69,11 @@ export default function SingUpForm(props) {
         <div className="signUpForm">
             <h3>Crea tu cuenta!</h3>
 
-            <Form>
+            <Form onSubmit={onSubmit} onChange={onChange}> 
                 <FormGroup>
                     <Row>
                         <Col>
-                            <FormControl defaultValue={formData.nombres} name="nombres" type="text" placeholder="Nombres" />
+                            <FormControl defaultValue={formData.nombre} name="nombre" type="text" placeholder="Nombres" />
                         </Col>
                         <Col>
                             <FormControl defaultValue={formData.apellidos} name="apellidos" type="text" placeholder="Apellidos" />
@@ -91,7 +91,13 @@ export default function SingUpForm(props) {
                         <Col>
                             <FormControl defaultValue={formData.repetir} name="repetir" type="password" placeholder="Repetir contraseña" />
                         </Col>
+                        
                     </Row>
+                    <ReCAPTCHA align="center"
+                    ref={captcha}
+                         sitekey="6Lcm_U8dAAAAAFHEMC_rV2mChbFkCO0kBCIfQn6f"
+                        onChange={recaptchaOnchange}
+                        />,
                 </FormGroup>
                 <Button variant="danger" type="submit">
                     {!singUpLoading ? "Registrarse" : <Spinner animation="border" />}
@@ -99,4 +105,14 @@ export default function SingUpForm(props) {
             </Form>
         </div>
     )
+}
+
+function initialFormValue() {
+    return {
+        nombre: "",
+        apellidos: "",
+        email: "",
+        password: "",
+        repetir: ""
+    };
 }

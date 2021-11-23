@@ -5,6 +5,8 @@ import {Close} from "../../../utils/Icons";
 import classNames from "classnames"
 import {addProyectoApi} from "../../../api/proyecto"
 import Swal from 'sweetalert2';
+
+
 export default function ProyectoModal(props) {
     const {show, setShow} = props;
     const [titulos, setTitulos] = useState("")

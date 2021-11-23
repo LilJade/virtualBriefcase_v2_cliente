@@ -4,8 +4,11 @@ import {Row,Container} from "react-bootstrap"
 import "./TabNav.scss"
 import Biografia from '../User/Biografia'
 import Redes from '../User/Redes'
+import Habilidades from '../User/Habilidades'
+
+
 export default function TabNav(props) {
-    const {user} = props
+    const {user,habilidades,loggedUser} = props
 
     const [typeb, setTypeb] = useState("biografia")
 
@@ -61,7 +64,7 @@ export default function TabNav(props) {
                                 )
                          }{
                                 typeb === "Habilidades" &&(
-                                <h3>Habilidades</h3>
+                                <Habilidades  habilidades={habilidades} user={user} loggedUser={loggedUser} />
                                 )
                          }
                          

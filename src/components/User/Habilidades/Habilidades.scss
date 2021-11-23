@@ -1,0 +1,29 @@
+@import "../../../scss/index.scss";
+
+.habilidades {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .editar {
+    background-color: $secundary;
+    color: white;
+    border-radius: 0.3rem;
+    border: 1px solid $secundary;
+    width: 2rem;
+    height: 2rem;
+  }
+  .habilidadeslist {
+    margin-top: 4rem;
+    padding: 5px 20px;
+  }
+}
+.iconoitems {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  .rounded {
+    width: 128px;
+    height: 128px;
+  }
+}

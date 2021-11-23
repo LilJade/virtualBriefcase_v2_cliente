@@ -90,7 +90,7 @@ import {useDebouncedCallback} from "use-debounce"
             Nuevos
         </Button>
         </ButtonGroup>
-        
+        <div className="lista">
         {!users ? (
               <div className="users__loading">
                   <Spinner animation="border" variant="info" />
@@ -99,7 +99,7 @@ import {useDebouncedCallback} from "use-debounce"
         ): (
             <>
             
-            <div className="lista">
+            
             <ListUsers  users={users}/>
             <Button onClick={moreData} className="load-more">
                 {!btnLoading ? (
@@ -109,9 +109,10 @@ import {useDebouncedCallback} from "use-debounce"
                     aria-hidden="true"/>
                 )}
             </Button>
-            </div>
+           
             </>
         )}
+         </div>
           </Container>
         </BasicLayout>
       

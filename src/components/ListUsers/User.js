@@ -7,6 +7,7 @@ import AvatarNoFound from "../../assets/png/Perfil.png"
 export default function User(props) {
     const {user} = props;
     const [userInfo, setUserInfo] = useState(null)
+
     useEffect(() => {
       getUserApi(user.id).then(response =>{
           setUserInfo(response)
@@ -29,7 +30,7 @@ export default function User(props) {
             alt={`${user.nombre} ${user.apellidos}`}
             />
             </Col>
-            <Col md={6}>
+            <Col md={5}>
                 <h4>
                     {user.nombre} {user.apellidos}
                 </h4>

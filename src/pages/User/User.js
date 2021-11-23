@@ -10,7 +10,7 @@ import Tabs from "../../components/Tabs"
 import { Container, Row,Button,Spinner } from 'react-bootstrap';
 import { getUserProyectoApi} from "../../api/proyecto"
 import ListProyecto from '../../components/ListProyecto/ListProyecto';
-
+import {getUserHabilidadesApi} from "../../api/habilidades"
 
 export  function User(props) {
 const {match,setRefreshCheckLogin} = props
@@ -20,6 +20,8 @@ const loggedUser = useAuth();
 const [proyectos, setProyectos] = useState(null)
 const [loadingProyecto, setLoadingProyecto] = useState(false)
     const [page, setPage] = useState(1)
+const [habilidades, setHabilidades] = useState(null)
+
 
 useEffect(() => {
     getUserApi(params.id).then(response =>{
@@ -50,6 +52,18 @@ useEffect(() => {
     })
   }, [params])
   
+
+  useEffect(() => {
+    getUserHabilidadesApi(params.id,1)
+    .then(respuesta =>{
+       setHabilidades(respuesta)
+    })
+    .catch(() => {
+        setHabilidades([]);
+    })
+  }, [params])
+
+
   const moreData = () =>{
     const pageTemp = page +1 ;
     setLoadingProyecto(true);
@@ -66,6 +80,8 @@ useEffect(() => {
 }
 
     return (
+      <>
+        {user && (
         <BasicLayout setRefreshCheckLogin={setRefreshCheckLogin}>
             <Container>
             <Row>
@@ -74,7 +90,7 @@ useEffect(() => {
                     <PanelInfo user={user}  loggedUser={loggedUser}/>
                 </div>
                 <div className="tabPanel">
-                    <Tabs user={user}/>
+                    <Tabs user={user} habilidades={habilidades}  loggedUser={loggedUser}/>
                 </div>
             </div>
             </Row>
@@ -101,7 +117,9 @@ useEffect(() => {
             </div>
             </Row>
             </Container>
-        </BasicLayout>
+        </BasicLayout>)
+        }
+        </>
     )
 }
 

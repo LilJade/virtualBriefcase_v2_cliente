@@ -7,12 +7,11 @@ import moment from "moment";
 import {API_HOST} from "../../utils/constant";
 import portadaNoFound from "../../assets/png/sin_foto.png"
 import Agregar from "../../assets/png/boton-agregar.png"
-import ProyectoModal from "../Modals/ProyectoModal"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlusSquare} from "@fortawesome/free-solid-svg-icons";
+import ProyectoModal from "../Modals/ProyectoModal";
+
 export default function ListProyecto(props) {
 
-    const {proyectos, user, loggedUsers} = props;
+    const {proyectos, user} = props;
     const [showModal, setShowModal] = useState(false)
     return (
         <div className="proyects"> 

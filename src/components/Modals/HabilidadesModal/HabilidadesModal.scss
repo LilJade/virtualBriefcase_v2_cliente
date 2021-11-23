@@ -1,0 +1,49 @@
+@import "../../../scss/index.scss";
+
+.habilidades-modal {
+  .modal-content {
+    border-radius: 25px;
+    overflow: hidden;
+    .modal-header {
+      border-bottom: 1px solid $border-grey;
+      padding: 15px;
+      .modal-title {
+        display: flex;
+        align-items: center;
+        color: $font-dark;
+        h2 {
+          margin-left: 10px;
+          font-size: 20px;
+        }
+        svg {
+          width: 15px;
+          height: 15px;
+          fill: $primary;
+          margin-left: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.iconoitemsModel {
+  .iconoscontainer {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    h4 {
+      margin-left: 2rem;
+    }
+    svg {
+      width: 15px;
+      height: 15px;
+      fill: $primary;
+      margin-left: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

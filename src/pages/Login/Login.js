@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
 import "./Login.scss"
-import BasicLayout from '../../layout/BasicLayout/BasicLayout'
 import loginImage from '../../assets/png/authentication.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBriefcase, faLocationArrow, faTachometerAlt } from '@fortawesome/free-solid-svg-icons'
@@ -49,10 +48,9 @@ export default function Login(props) {
         setShowModal(true);
         setContentModal(content);
     }
-
     return (
         <>
-         
+            
                 <div className="login">
                     <div className="tittle">
                         <h2>Virtual<br /><span>BRIEFCASE</span></h2>
